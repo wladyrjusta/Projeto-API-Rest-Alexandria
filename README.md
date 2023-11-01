@@ -14,15 +14,41 @@ Relacionamentos:
 - Books e Authors: N:N.
 - Books e Publishers: 1:N.
 
-## Configuração e Execução
+## Executando a Aplicação com Docker e Docker Compose
 
-1. **Pré-requisitos**: Java configurado e Docker rodando.
+Para executar a aplicação com Docker e Docker Compose, siga as etapas abaixo:
 
-2. **Clonando o Repositório**: Clone o projeto do GitHub.
+1. **Clone o repositório**:
 
-3. **Configurando o Banco de Dados**: Configure as credenciais do MySQL em `application.properties`.
+```shell
+  git clone git@github.com:wladyrjusta/projeto-api-localizador-de-museus-java.git
+```
 
-4. **Build e Execução**: Execute a aplicação Spring Boot. Acesse em `http://localhost:8080`.
+
+  # Navegue até o diretório do projeto:
+  ```shell
+  cd projeto-api-localizador-de-museus-java
+```
+
+Crie uma imagem Docker:
+
+```shell
+docker build -t localizador-de-museus .
+```
+
+Inicie um contêiner Docker com a imagem criada e o banco de dados MySQL usando o Docker Compose:
+
+```shell
+docker-compose up -d
+```
+
+Isso iniciará um contêiner MySQL com as configurações especificadas no arquivo docker-compose.yml e o contêiner da aplicação Spring Boot. Certifique-se de que ambos os contêineres estejam em execução antes de acessar a aplicação.
+
+Aplicação disponivél na rota:
+
+```shell
+http://localhost:8080/
+```
 
 ## Endpoints da API
 
